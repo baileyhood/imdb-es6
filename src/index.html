@@ -3,13 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title>IMDB Search - ES6</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css">
   </head>
   <body>
     <form class="search-form">
         <input class="search-input" type="search">
         <button type="submit">Search</button>
     </form>
+    <button class="modal__trigger">Modal</button>
+    <div class="modal__container">
+        <div class="modal__dialog">
+            <div class="modal__content">
+                <h3>I'm a modal</h3>
+                <button class="modal__close-btn" aria-label="Close"><span>x</span></button>
+            </div>
+        </div>
+    </div>
     <button class="next-page-button">Next Page</button>
     <button class="previous-page-button is-hidden">Previous Page</button>
     <div class="card-container row"></div>
