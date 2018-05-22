@@ -1,5 +1,6 @@
 import './search';
 import './movie-page';
+import './modal';
 import './index.scss';
 
 !(function(app) {
