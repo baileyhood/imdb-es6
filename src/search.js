@@ -1,3 +1,5 @@
+import modalInit from './modal';
+
 (function(app){
 
 	var MODULE_NAME = 'SEARCH';
@@ -22,7 +24,6 @@
 		const inputValue = document.querySelector('.search-input').value;
 		const title = 's=' + inputValue.split(' ').join('+');
 		search = self.dataUrl + title;
-		console.log(search);
 		getData(search);
 	});
 
@@ -43,18 +44,21 @@
 	};
 
 	const displayResults = (data) => {
-		const cardContainer = document.querySelector('.card-container');
+		const cardContainer = document.querySelector('.card-container'),
+			results = data.Search;
+
 		cardContainer.innerHTML = '';
-		const results = data.Search;
 		results.forEach((el) => {
 			cardContainer.insertAdjacentHTML('beforeend',
 				`<div class="card col-sm-4" data-movie-id=${el.imdbID}>
 					<img src="${el.Poster}">
 					<h3>${el.Title}</h3>
+					<button data-modal-open="">More details</button>
 				</div>`
 			);
 		});
-		console.log(results);
+		//TODO: Make callback
+		modalInit();
 	}
 
 	nextButton.addEventListener('click', () => {

@@ -1,17 +1,25 @@
-(function(){
+export default function modalInit () {
+
     //TODO: Use data-attrs instead of class names
-    const button = document.querySelector('.modal__trigger'),
-        modal = document.querySelector('.modal__container'),
+    const button = document.querySelectorAll('[data-modal-open]'),
+        modal = document.querySelector('.modal'),
         closeButton = document.querySelector('.modal__close-btn');
+
+    var toggleClass = () => {
+        modal.classList.toggle('is-visible');
+    }
 
     //TODO: Scope to modal
     if (button && modal) {
-        button.addEventListener('click', () => {
-            modal.classList.toggle('is-visible');
-        });
+
+        button.forEach((el) => {
+            el.addEventListener('click', toggleClass);
+        })
+
         closeButton.addEventListener('click', () => {
             modal.classList.toggle('is-visible');
         });
         return self;
     }
-}());
+
+} //end of function

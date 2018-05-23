@@ -25,9 +25,15 @@
         fetch(search)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
+            self.displayResults(data);
         })
         .catch(() => console.log('An error occured'))
+    }
+
+    self.displayResults = (search) => {
+        const modal = document.querySelector('.modal__content');
+        modal.innerHTML = '';
+        modal.insertAdjacentHTML('beforeend', search.Title);
     }
 
 })(window._APP = (window._APP || {}));
