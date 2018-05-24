@@ -1,25 +1,23 @@
 export default function modalInit () {
 
-    //TODO: Use data-attrs instead of class names
-    const button = document.querySelectorAll('[data-modal-open]'),
-        modal = document.querySelector('.modal'),
-        closeButton = document.querySelector('.modal__close-btn');
+	//TODO: Use data-attrs instead of class names
+	const button = document.querySelectorAll('[data-modal-open]'),
+		modal = document.querySelector('.modal'),
+		closeButton = document.querySelector('.modal__close-btn');
 
-    var toggleClass = () => {
-        modal.classList.toggle('is-visible');
-    }
+	const toggleClass = () => {
+		modal.classList.toggle('is-visible');
+	};
 
-    //TODO: Scope to modal
-    if (button && modal) {
+	//TODO: Scope to modal
+	if (button && modal && !modalEventsTriggered) {
+		console.log('ran');
+		button.forEach((el) => {
+			el.addEventListener('click', toggleClass);
+		});
 
-        button.forEach((el) => {
-            el.addEventListener('click', toggleClass);
-        })
-
-        closeButton.addEventListener('click', () => {
-            modal.classList.toggle('is-visible');
-        });
-        return self;
-    }
+		closeButton.addEventListener('click', toggleClass);
+		return self;
+	}
 
 } //end of function

@@ -32,12 +32,15 @@ module.exports = {
 
   module: {
     rules: [
-    //     {
-    //   enforce: "pre", //to check source files, not modified by other loaders (like babel-loader)
-    //   test: /\.js$/,
-    //   exclude: /node_modules/,
-    //   loader: "eslint-loader"
-    // },
+        {
+      enforce: "pre", //to check source files, not modified by other loaders (like babel-loader)
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: "eslint-loader",
+      options: {
+          fix: true
+      }
+    },
 
     {
       test: /\.js$/,

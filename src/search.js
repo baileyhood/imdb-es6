@@ -8,7 +8,7 @@ import modalInit from './modal';
 		init: () => {
 			console.log(MODULE_NAME + ' initialized');
 		}
-	}
+	};
 
 	const form = document.querySelector('.search-form'),
 		nextButton = document.querySelector('.next-page-button'),
@@ -34,13 +34,13 @@ import modalInit from './modal';
 			search = search + number;
 		}
 		fetch(search)
-		.then(response => response.json())
-		.then(data => {
-			displayResults(data);
-			var event = new CustomEvent("custom-movie-event", { "detail": "Example of an event" });
-			document.dispatchEvent(event);
-		})
-		.catch(() => console.log('An error occured'))
+			.then(response => response.json())
+			.then(data => {
+				displayResults(data);
+				var event = new CustomEvent('custom-movie-event', { 'detail': 'Example of an event' });
+				document.dispatchEvent(event);
+			})
+			.catch(() => console.log('An error occured'));
 	};
 
 	const displayResults = (data) => {
@@ -59,7 +59,7 @@ import modalInit from './modal';
 		});
 		//TODO: Make callback
 		modalInit();
-	}
+	};
 
 	nextButton.addEventListener('click', () => {
 		pageNum++;
@@ -79,7 +79,7 @@ import modalInit from './modal';
 		else {
 			prevButton.classList.add('is-hidden');
 		}
-	}
+	};
 
 
 })(window._APP = (window._APP || {}));

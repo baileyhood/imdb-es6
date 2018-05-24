@@ -4,24 +4,24 @@ import './index.scss';
 
 !(function(app) {
 
-    var self = app.SITE = {
+	var self = app.SITE = {
 
-        start: function() {
-            runModules();
-        }
-    }
+		start: function() {
+			runModules();
+		}
+	};
 
-    function runModules() {
-        for (var moduleName in app) {
-            if (app.hasOwnProperty(moduleName)) {
-                var module = app[moduleName];
-                if (module.init) {
-                    module.init();
-                }
-            }
-        }
-    }
+	function runModules() {
+		for (var moduleName in app) {
+			if (app.hasOwnProperty(moduleName)) {
+				var module = app[moduleName];
+				if (module.init) {
+					module.init();
+				}
+			}
+		}
+	}
 
-    app.SITE.start();
+	app.SITE.start();
 
 })(window._APP = (window._APP || {}));
