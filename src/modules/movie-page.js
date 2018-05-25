@@ -33,6 +33,7 @@
 	self.displayResults = (search) => {
 		const modal = document.querySelector('.modal__content');
 		modal.innerHTML = '';
+		console.log('search', search);
 		modal.insertAdjacentHTML('beforeend', search.Title);
 	};
 

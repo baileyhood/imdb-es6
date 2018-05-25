@@ -1,3 +1,5 @@
+let modalTriggered = false;
+
 export default function modalInit () {
 
 	//TODO: Use data-attrs instead of class names
@@ -10,14 +12,15 @@ export default function modalInit () {
 	};
 
 	//TODO: Scope to modal
-	if (button && modal && !modalEventsTriggered) {
-		console.log('ran');
+	if (button && modal) {
 		button.forEach((el) => {
 			el.addEventListener('click', toggleClass);
 		});
 
-		closeButton.addEventListener('click', toggleClass);
-		return self;
+		if (!modalTriggered) {
+			closeButton.addEventListener('click', toggleClass);
+			modalTriggered = true;
+		}
 	}
 
 } //end of function

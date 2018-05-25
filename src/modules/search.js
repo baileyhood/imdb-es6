@@ -50,7 +50,7 @@ import modalInit from './modal';
 		cardContainer.innerHTML = '';
 		results.forEach((el) => {
 			cardContainer.insertAdjacentHTML('beforeend',
-				`<div class="card col-sm-4" data-movie-id=${el.imdbID}>
+				`<div class="card col-sm-3" data-movie-id=${el.imdbID}>
 					<img src="${el.Poster}">
 					<h3>${el.Title}</h3>
 					<button data-modal-open="">More details</button>

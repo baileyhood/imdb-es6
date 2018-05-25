@@ -1,5 +1,5 @@
-import './search';
-import './movie-page';
+import './modules/search';
+import './modules/movie-page';
 import './index.scss';
 
 !(function(app) {
@@ -22,6 +22,6 @@ import './index.scss';
 		}
 	}
 
-	app.SITE.start();
+	self.start();
 
 })(window._APP = (window._APP || {}));
