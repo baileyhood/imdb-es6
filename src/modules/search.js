@@ -17,7 +17,7 @@ import modalInit from './modal';
 	var search = '',
 		pageNum = 1;
 
-	self.dataUrl = 'http://www.omdbapi.com/?apikey=3a3eeb7f&';
+	self.dataUrl = 'https://www.omdbapi.com/?apikey=3a3eeb7f&';
 
 	form.addEventListener('submit', (e) => {
 		e.preventDefault();
