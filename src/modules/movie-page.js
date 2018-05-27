@@ -25,6 +25,7 @@
 		fetch(search)
 			.then(response => response.json())
 			.then(data => {
+				console.log('data length', data);
 				self.displayResults(data);
 			})
 			.catch(() => console.log('An error occured'));
